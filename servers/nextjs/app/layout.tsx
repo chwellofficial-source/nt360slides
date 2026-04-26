@@ -28,14 +28,17 @@ export const metadata: Metadata = {
     "Create your own slides and presentations with NexTeach 360 for your classes",
   keywords: [
     "AI presentation generator",
-    "data storytelling",
-    "data visualization tool",
-    "AI data presentation",
-    "presentation generator",
-    "data to presentation",
-    "interactive presentations",
-    "professional slides",
+    "Education slides",
+    "teacher presentation tool",
+    "AI slides for teachers",
+    "classroom presentations",
+    "NexTeach 360",
+    "e-learning presentations",
+    "course slide maker",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    },
   openGraph: {
     title: "NexTeach 360 - AI presentation generator",
     description:
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NexTeach 360 - AI presentation generator",
     description:
-      "OCreate stunning AI-powered presentations for your courses in seconds.",
+      "Create stunning AI-powered presentations for your courses in seconds.",
     images: ["https://static.wixstatic.com/media/cce196_018a3da4d6a94afab53048c33108bee9~mv2.png"],
   },
 };
