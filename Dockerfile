@@ -77,7 +77,7 @@ ARG INSTALL_LIBREOFFICE=true
 
 # LiteParse uses Node + @llamaindex/liteparse (same runner as Electron); OCR uses Tesseract.
 ENV APP_DATA_DIRECTORY=/app_data \
-    TEMP_DIRECTORY=/tmp/presenton \
+    TEMP_DIRECTORY=/tmp/nt360slides \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium \
     EXPORT_PACKAGE_ROOT=/app/presentation-export \
     EXPORT_RUNTIME_DIR=/app/presentation-export \
@@ -115,5 +115,5 @@ COPY --from=nextjs-builder /app/servers/nextjs/.next-build/static /app/servers/n
 COPY start.js LICENSE NOTICE ./
 COPY nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 80
+EXPOSE 7860
 CMD ["node", "/app/start.js"]
