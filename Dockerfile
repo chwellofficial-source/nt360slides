@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # Build version: 2026-04-26-v4
+# Build version: 2026-04-26-v4
 
 FROM python:3.11-slim-trixie AS fastapi-builder
 
