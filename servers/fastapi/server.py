@@ -1,6 +1,7 @@
-import argparse
+import sys
 import os
-
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import argparse
 import uvicorn
 
 if __name__ == "__main__":
@@ -14,10 +15,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     reload = args.reload == "true"
     host = "127.0.0.1"
-
-    # PPTX-to-HTML export and other in-process callers resolve `/app_data` assets here.
     os.environ.setdefault("FASTAPI_PUBLIC_URL", f"http://{host}:{args.port}")
-
     uvicorn.run(
         "api.main:app",
         host=host,
