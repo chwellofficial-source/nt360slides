@@ -1,10 +1,7 @@
 import sys
 import os
 
-# Add fastapi directory to path before uvicorn imports anything
 fastapi_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, fastapi_dir)
-os.environ["PYTHONPATH"] = fastapi_dir + ":" + os.environ.get("PYTHONPATH", "")
 
 import argparse
 import uvicorn
@@ -27,4 +24,5 @@ if __name__ == "__main__":
         port=args.port,
         log_level="info",
         reload=reload,
+        app_dir=fastapi_dir,
     )
