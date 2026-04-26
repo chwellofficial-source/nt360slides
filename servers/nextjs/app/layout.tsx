@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { Syne } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import MixpanelInitializer from "./MixpanelInitializer";
 import { Toaster } from "@/components/ui/sonner";
 const inter = localFont({
   src: [
@@ -23,10 +22,10 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://presenton.ai"),
-  title: "Presenton - Open Source AI presentation generator",
+  metadataBase: new URL("https://nexteach360.com"),
+  title: "NexTeach 360 - AI presentation generator",
   description:
-    "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
+    "Create your own slides and presentations with NexTeach 360 for your classes",
   keywords: [
     "AI presentation generator",
     "data storytelling",
@@ -38,31 +37,31 @@ export const metadata: Metadata = {
     "professional slides",
   ],
   openGraph: {
-    title: "Presenton - Open Source AI presentation generator",
+    title: "NexTeach 360 - AI presentation generator",
     description:
-      "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
-    url: "https://presenton.ai",
-    siteName: "Presenton",
+      "Create stunning AI-powered presentations for your courses in seconds.",
+    url: "https://nexteach360.com",
+    siteName: "NexTeach 360",
     images: [
       {
-        url: "https://presenton.ai/presenton-feature-graphics.png",
+        url: "https://static.wixstatic.com/media/cce196_42deac6b71f14423a1689280ca4af960~mv2.png",
         width: 1200,
         height: 630,
-        alt: "Presenton Logo",
+        alt: "NexTeach 360 Logo",
       },
     ],
     type: "website",
     locale: "en_US",
   },
   alternates: {
-    canonical: "https://presenton.ai",
+    canonical: "https://nexteach360.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Presenton - Open Source AI presentation generator",
+    title: "NexTeach 360 - AI presentation generator",
     description:
-      "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
-    images: ["https://presenton.ai/presenton-feature-graphics.png"],
+      "OCreate stunning AI-powered presentations for your courses in seconds.",
+    images: ["https://static.wixstatic.com/media/cce196_018a3da4d6a94afab53048c33108bee9~mv2.png"],
   },
 };
 
@@ -78,11 +77,11 @@ export default function RootLayout({
         className={`${inter.variable} ${syne.variable} antialiased`}
       >
         <Providers>
-          <MixpanelInitializer>
+          
 
             {children}
 
-          </MixpanelInitializer>
+          
         </Providers>
         <Toaster position="top-center" />
       </body>
