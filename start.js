@@ -214,7 +214,7 @@ const startServers = async () => {
     {
       cwd: fastapiDir,
       stdio: "inherit",
-      env: process.env,
+      env: { ...process.env, PYTHONPATH: fastapiDir },
     }
   );
 
