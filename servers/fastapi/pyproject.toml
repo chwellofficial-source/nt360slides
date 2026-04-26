@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "presenton_backend"
+name = "nt360slides_backend"
 version = "0.1.0"
-description = "presenton_backend"
+description = "nt360slides_backend"
 requires-python = ">=3.11,<3.12"
 dependencies = [
     "alembic>=1.14.0",
@@ -41,5 +41,4 @@ include = [
     "constants*",
     "utils*",
     "templates*",
-    "presenton_backend*",
 ]

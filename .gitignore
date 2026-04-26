@@ -27,16 +27,3 @@ skills-lock.json
 presentation-export/index.js
 presentation-export/py/
 .cache/presentation-export/
-
-cat >> .gitignore << 'EOF'
-
-# HF Spaces - exclude large files not needed for Docker build
-electron/
-servers/fastapi/build/
-servers/fastapi/chroma/
-servers/fastapi/models/
-servers/fastapi/fastembed_cache/
-servers/fastapi/assets/icons_vectorstore.json
-servers/fastapi/assets/icons-vectorstore.json
-readme_assets/
-EOF
