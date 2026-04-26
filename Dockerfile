@@ -57,7 +57,7 @@ RUN mkdir -p /app/document-extraction-liteparse \
     && npm --prefix /app/document-extraction-liteparse init -y \
     && npm --prefix /app/document-extraction-liteparse install @llamaindex/liteparse@1.4.0 --omit=dev
 
-COPY electron/resources/document-extraction/liteparse_runner.mjs /app/document-extraction-liteparse/liteparse_runner.mjs
+
 COPY scripts/sync-presentation-export.cjs /app/scripts/sync-presentation-export.cjs
 # Bundled export still loads @img/sharp-* native addons from node_modules (not inlined).
 RUN node /app/scripts/sync-presentation-export.cjs --force \
@@ -84,6 +84,7 @@ ENV APP_DATA_DIRECTORY=/app_data \
     BUILT_PYTHON_MODULE_PATH=/app/presentation-export/py/convert-linux-x64 \
     PRESENTON_APP_ROOT=/app \
     PATH="/opt/venv/bin:${PATH}" \
+    PYTHONPATH="/app/servers/fastapi" \
     NODE_ENV=production \
     START_OLLAMA=false
 
@@ -102,6 +103,9 @@ RUN mkdir -p /app/scripts /app/servers/fastapi /app/servers/nextjs
 
 COPY --from=fastapi-builder /opt/venv /opt/venv
 COPY --from=fastapi-builder /app/servers/fastapi /app/servers/fastapi
+
+# Cache bust: 2026-04-26-v3
+RUN cd /app/servers/fastapi && /opt/venv/bin/pip install --no-deps -e . --quiet
 
 COPY --from=assets-builder /app/package.json /app/package.json
 COPY --from=assets-builder /app/document-extraction-liteparse /app/document-extraction-liteparse
