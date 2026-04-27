@@ -2,9 +2,11 @@ import sys
 import os
 
 fastapi_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, fastapi_dir)
 
 import argparse
 import uvicorn
+from api.main import app
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the FastAPI server")
@@ -19,10 +21,8 @@ if __name__ == "__main__":
     host = "127.0.0.1"
     os.environ.setdefault("FASTAPI_PUBLIC_URL", f"http://{host}:{args.port}")
     uvicorn.run(
-        "api.main:app",
+        app,
         host=host,
         port=args.port,
         log_level="info",
-        reload=reload,
-        app_dir=fastapi_dir,
     )
